@@ -13,6 +13,7 @@ export class ViewSectorComponent implements OnInit {
     private activatedRoute: ActivatedRoute) {
     //Seting the Id to get the Sector tio show
     this.getSectorById(this.activatedRoute.snapshot.params.id)
+    this.getStreetsBySectorId(this.activatedRoute.snapshot.params.id)
   }
 
   ngOnInit(): void {
@@ -27,4 +28,15 @@ export class ViewSectorComponent implements OnInit {
     )
   }
 
+  //Get Streets by Sector Id
+
+  streets:any = []
+  getStreetsBySectorId(id:string) {
+    this.data.getStreetsBySectorId(id).subscribe(
+      res => {
+        this.streets = res.data
+        console.log(res.data)
+      }
+    )
+  }
 }

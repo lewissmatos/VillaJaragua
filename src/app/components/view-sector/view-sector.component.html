@@ -1,8 +1,23 @@
 <div  class="container mt-3 animated fadeIn ">
-    <h1>Ver: {{sector.name}}</h1>
+    <h1>{{sector.name | uppercase}}</h1>
     <hr class="mb-3">
 
     <div class="row">
-        
+        <div class="col-lg-4 col-md-6 col-sm-7 col-12 mb-4">
+            <div class="img-card">
+                <img class="card-img img-fluid" [src]="sector.photo" alt="Imagen representativa del sector {{sector.name}}">
+            </div>
+        </div>
+
+        <div class="col-lg-8 col-md-6 col-sm-5 col-12">
+            <h3>
+                Calles:
+            </h3>
+
+            <ul class="list-group mt-3">
+                <li class="list-group-item " 
+                *ngFor="let street of streets">{{street.name}}</li>
+            </ul>
+        </div>
     </div>
 </div>

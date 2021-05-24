@@ -12,7 +12,7 @@ export class DataService {
   url = 'https://villa-jaragua-api.herokuapp.com/api/v1'
 
 
-  //Methods to get Sector's data
+  //Methods to get Sectors data
   
   //Get All Sectors
   getAllSectors() {
@@ -24,4 +24,11 @@ export class DataService {
     return this.http.get<any>(`${this.url}/sectors/${id}`)    
   }
 
+
+
+  //Methos to get Streets Data
+
+  getStreetsBySectorId(id: string) {
+    return this.http.get<any>(`${this.url}/sectors/streets/${id}`)
+  }
 }
