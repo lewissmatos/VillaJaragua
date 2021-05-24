@@ -1,1 +1,161 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-family: 'KoHo', sans-serif;
+}
+
+
+// $acent: rgb(86, 73, 206);
+// $acent-secondary: rgb(160, 118, 240);
+$acent: #0d755b;
+$acent-secondary: rgb(71, 236, 201);
+
+$acent-blue: rgb(69, 82, 110);
+$border-color:rgba(39, 180, 126, 0.15);
+
+//STYLES
+.form-check-input:checked{
+    background-color: $acent;
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 15%);
+    border-color: $border-color;
+}
+.form-check-input:focus{
+    box-shadow: none;
+    border-color: $border-color;
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 10%);
+    border-color: rgba(20, 156, 104, 0.05);
+    background-color: rgb(243, 243, 243);
+}
+
+.form-control{
+    border-radius: 12px !important;
+    background-color: rgb(243, 243, 243);
+    box-shadow: none;
+    border-color: transparent;
+    outline: none;
+}
+.form-select{
+    border-radius: 12px !important;
+}
+.btn:focus{
+    box-shadow: 0 0 0 0.05rem rgb(238 91 54 / 15%);
+    border-color: $border-color;
+}
+.btn{
+    border-radius: 12px !important;
+    transition: all 0.15s linear;
+}
+
+label{
+    font-size: 12px;
+}
+
+.bg-acent{
+    background-color: $acent;
+    color: white;
+    
+}
+.bg-acent-secondary{
+    background-color: $acent-secondary;
+    color: white;
+    
+}
+
+.alert{
+    border-radius: 12px;
+}
+
+a:hover{
+    color: rgb(68, 46, 146);
+}
+
+button:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 25px rgba(114, 114, 114, 0.15);
+    padding-bottom: 6.2px;
+}
+
+button{
+    outline: none !important;
+}
+
+.text-acent{
+    color: $acent;
+}
+.text-acent-secondary{
+    color: $acent-secondary;
+}
+
+.btn-acent{
+    background-color: $acent;
+    color: white;
+}
+.btn-acent-secondary{
+    background-color: $acent-secondary;
+    color: white;
+}
+
+.btn-acent-disabled{
+    background-color: $acent-secondary;
+    color: white;
+}
+
+.btn-acent:hover{
+    // background-color: rgb(228, 77, 39);
+    color: white;
+}
+.btn-acent-secondary:hover{
+    color: white;
+}
+
+.btn-acent-disabled:hover{
+    cursor: no-drop; 
+    color: white;
+    transform: scale(1.0) !important;
+    box-shadow: 0px 0px 0px transparent !important;
+    padding-bottom: 6 !important;
+}
+
+
+//cardStyles
+
+
+/* Animaciones */
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
