@@ -9,13 +9,16 @@ import { DataService } from 'src/app/services/data.service';
 export class SectorsComponent implements OnInit {
 
   constructor(private data: DataService) {
+    //Calling method to Get all Sectors from Backend
     this.getAllSectors()
   }
 
   ngOnInit(): void {
   }
 
-  sectors:any = []
+  sectors: any = []
+  
+  //Method to get all sectors from Backend
   getAllSectors() {
     this.data.getAllSectors().subscribe(
       res => {

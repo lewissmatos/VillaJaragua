@@ -7,9 +7,21 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor(private http: HttpClient) { }
+  
+  //URL of Server API Rest
   url = 'https://villa-jaragua-api.herokuapp.com/api/v1'
 
+
+  //Methods to get Sector's data
+  
+  //Get All Sectors
   getAllSectors() {
     return this.http.get<any>(`${this.url}/sectors`)
   }
+  
+  //Get Sector by Id
+  getSectorById(id: string) {
+    return this.http.get<any>(`${this.url}/sectors/${id}`)    
+  }
+
 }
