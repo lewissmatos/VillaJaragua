@@ -1,6 +1,6 @@
 <div class="sector-card">
     <div class="img-card">
-        <img class="card-img img-fluid" src="https://1.bp.blogspot.com/-qVJ9QsqFm2c/Xm-ytlKJtPI/AAAAAAADMMQ/fNZvMT5XUBsmzqIqKnH8mAV3Gugf8ii0gCLcBGAsYHQ/s1600/thumbnail_Outlook-4tid2cdi.png" alt="">
+        <img class="card-img img-fluid" [src]="sectorData.photo" alt="Imagen representativa del sector {{sectorData.name}}">
     </div>
     <div class="mt-3 sector-card-body">
         <!-- <h4>
@@ -13,13 +13,19 @@
                 {{sectorData.name}}
             </strong>
         </h4>
+
+        <p > Area:
+            <strong>
+                {{sectorData.area}}
+            </strong>
+            M²
+        </p>
     </div>
     <div class="d-grid gap-2 mt-3">
         <button [routerLink]="['/view', sectorData._id]"
         class="btn btn-acent ">
             Más información 
             <i class='mx-2 fas fa-eye bx-burst-hover'></i>
-
         </button>
 
     </div>

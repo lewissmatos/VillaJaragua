@@ -16,6 +16,8 @@ export class SectorsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+  noInternet = false
   sectors: any = []
   
   //Method to get all sectors from Backend
@@ -25,6 +27,13 @@ export class SectorsComponent implements OnInit {
         this.sectors = res.data
       }
     )
+    
+    //Setting warning "No internet conexion"
+    if (this.sectors.length == 0) {
+      setTimeout(() => {
+        this.noInternet = true
+      }, 4000)
+    }
   }
 
 }
