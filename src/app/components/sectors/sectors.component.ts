@@ -36,4 +36,15 @@ export class SectorsComponent implements OnInit {
     }
   }
 
+  //Search Method
+
+  filteredSectors:any = []
+  search(word:string) {
+    this.filteredSectors = this.sectors.filter(
+      (x: any) => {
+        return x.name.toLowerCase().includes(word.toLowerCase())
+      }
+    )
+  }
+
 }
