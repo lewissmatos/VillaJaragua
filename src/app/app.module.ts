@@ -8,6 +8,8 @@ import { SectorsComponent } from './components/sectors/sectors.component';
 import { StreetsComponent } from './components/streets/streets.component';
 import { SectorCardComponent } from './components/sector-card/sector-card.component';
 import { ViewSectorComponent } from './components/view-sector/view-sector.component';
+import { NavComponent } from './components/nav/nav.component';
+import { StreetCardComponent } from './components/street-card/street-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ViewSectorComponent } from './components/view-sector/view-sector.compon
     SectorsComponent,
     StreetsComponent,
     SectorCardComponent,
-    ViewSectorComponent
+    ViewSectorComponent,
+    NavComponent,
+    StreetCardComponent
   ],
   imports: [
     BrowserModule,

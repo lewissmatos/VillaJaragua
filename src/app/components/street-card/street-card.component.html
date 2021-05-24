@@ -1,0 +1,15 @@
+<div class="street-card mb-3">
+    <h1 class="text-acent">
+        <strong>{{streetData.name}}</strong>
+    </h1>
+    <div class="street-card-body">
+        <h4>Sectores:</h4>
+
+        <tbody>
+            <tr [routerLink]="['/view', sector._id]"
+             *ngFor="let sector of sectors">
+                <i class='text-acent fas fa-chevron-right mx-1'></i>{{sector.name}}
+            </tr>
+        </tbody>
+    </div>
+</div>

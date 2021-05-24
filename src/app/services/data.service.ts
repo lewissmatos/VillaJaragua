@@ -31,4 +31,8 @@ export class DataService {
   getStreetsBySectorId(id: string) {
     return this.http.get<any>(`${this.url}/sectors/streets/${id}`)
   }
+  
+  getAllStreets() {
+    return this.http.get<any>(`${this.url}/streets`)
+  }
 }

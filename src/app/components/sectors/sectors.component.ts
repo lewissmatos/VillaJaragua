@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SectorsComponent implements OnInit {
 
-  constructor(private data: DataService) {
+  constructor(private data: DataService, private router: Router) {
     //Calling method to Get all Sectors from Backend
     this.getAllSectors()
   }
