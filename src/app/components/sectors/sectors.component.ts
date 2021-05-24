@@ -16,12 +16,10 @@ export class SectorsComponent implements OnInit {
   }
 
   sectors:any = []
-
   getAllSectors() {
     this.data.getAllSectors().subscribe(
       res => {
         this.sectors = res.data
-        console.log(res.data)
       }
     )
   }

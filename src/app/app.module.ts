@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SectorsComponent } from './components/sectors/sectors.component';
 import { StreetsComponent } from './components/streets/streets.component';
 import { SectorCardComponent } from './components/sector-card/sector-card.component';
+import { ViewSectorComponent } from './components/view-sector/view-sector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SectorsComponent,
     StreetsComponent,
-    SectorCardComponent
+    SectorCardComponent,
+    ViewSectorComponent
   ],
   imports: [
     BrowserModule,
