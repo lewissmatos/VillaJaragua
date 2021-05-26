@@ -18,10 +18,10 @@ export class ViewSectorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  sector:any = {}
-
+  
   //Get sector to Show in View layout
+  
+  sector: any = {}
   getSectorById(id: string) {
     this.data.getSectorById(id).subscribe(
       res => this.sector = res.data
@@ -35,7 +35,6 @@ export class ViewSectorComponent implements OnInit {
     this.data.getStreetsBySectorId(id).subscribe(
       res => {
         this.streets = res.data
-        console.log(res.data)
       }
     )
   }

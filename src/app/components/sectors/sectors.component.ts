@@ -1,3 +1,4 @@
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
@@ -9,10 +10,23 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SectorsComponent implements OnInit {
 
-  constructor(private data: DataService, private router: Router) {
+  constructor(private data: DataService, private router: Router,private breakpointObserver: BreakpointObserver ) {
     //Calling method to Get all Sectors from Backend
     this.getAllSectors()
+
+    //Breakpoin to cheange search icon
+
+    this.breakpointObserver
+      .observe(['(max-width: 600px)'])
+      .subscribe((state: BreakpointState ) => {
+        if (state.matches) {
+          this.searchIcon = true          
+        } else {
+          this.searchIcon = false
+        }
+      });
   }
+  searchIcon =  false
 
   ngOnInit(): void {
   }
@@ -26,15 +40,17 @@ export class SectorsComponent implements OnInit {
     this.data.getAllSectors().subscribe(
       res => {
         this.sectors = res.data
+
+        if (this.sectors.length === 0) {
+          //Setting warning "No internet conexion"
+          setTimeout(() => {
+            this.noInternet = true
+          }, 5000)
+        }
+      }, error => {
+        console.log(error)
       }
-    )
-    
-    //Setting warning "No internet conexion"
-    if (this.sectors.length == 0) {
-      setTimeout(() => {
-        this.noInternet = true
-      }, 4000)
-    }
+    )    
   }
 
   //Search Method

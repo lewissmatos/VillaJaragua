@@ -20,6 +20,5 @@ export class StreetCardComponent implements OnInit {
 
   getSectors() {
     this.sectors = this.streetData.sectors.map((x: any) => x)
-    console.log(this.sectors);
   }
 }

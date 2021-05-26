@@ -7,6 +7,22 @@
     type="text" placeholder="Buscar un sector..."> -->
     <hr class="mb-3">
 
+    <div *ngIf="streets.length === 0" class="animated fadeIn text-center mt-5">
+       
+        <i *ngIf="!noInternet" class="bx bx-loader-circle bx-spin text-acent"
+            style="font-size: 150px;">
+        </i>
+
+        <i *ngIf="noInternet" class="bx bx-error bx-tada text-danger"
+            style="font-size: 150px;">
+        </i>
+        
+        <h2 
+            [ngClass]="{'text-acent': !noInternet, 'text-danger': noInternet}"
+            class="animated fadeIn text-danger">{{noInternet? 'Revisa tu conexión a Intenet!': 'Cargando...'}}
+        </h2>
+    </div>
+
     <div class="row">    
         <app-street-card class="col-lg-3 col-md-4 col-sm-6 col-12"
          *ngFor="let street of streets" [streetData]="street"

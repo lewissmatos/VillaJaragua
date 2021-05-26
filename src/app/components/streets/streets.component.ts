@@ -17,11 +17,23 @@ export class StreetsComponent implements OnInit {
 
   streets: any = []
   
+  noInternet = false
+  
   getAllStreets() {
     this.data.getAllStreets().subscribe(
       res => {
         this.streets = res.data
-        console.log(res.data)
+
+        setTimeout(() => {
+          this.noInternet = true
+        }, 3000)
+        
+      }, error => {
+        console.log(error)
+
+        setTimeout(() => {
+          this.noInternet = true
+        }, 3000)
       }
     )
   }

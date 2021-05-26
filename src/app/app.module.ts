@@ -10,6 +10,7 @@ import { SectorCardComponent } from './components/sector-card/sector-card.compon
 import { ViewSectorComponent } from './components/view-sector/view-sector.component';
 import { NavComponent } from './components/nav/nav.component';
 import { StreetCardComponent } from './components/street-card/street-card.component';
+import { LayoutModule } from '@angular/cdk/layout'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { StreetCardComponent } from './components/street-card/street-card.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

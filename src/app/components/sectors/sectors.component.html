@@ -4,8 +4,18 @@
     
     <h1 class="mt-3">Sectores de Villa Jaragua</h1>
 
-    <input #word (keyup)="search(word.value.trim())" class="form-control" 
-    type="text" placeholder="Buscar un sector...">
+    <div>
+        <input #word  class="form-control w-75 input-search" style="display: inline-block;" 
+        type="text" placeholder="Buscar un sector...">
+
+        <button class="btn btn-acent w-25 btn-search " (click)="search(word.value.trim())">
+            <p style="margin: 0px; " *ngIf="!searchIcon">
+                Buscar
+            </p>
+        <i class="fas fa-search" *ngIf="searchIcon"></i>
+        </button>
+    </div>
+
     <hr class="mb-3">
 
     <div *ngIf="sectors.length === 0" class="animated fadeIn text-center mt-5">
