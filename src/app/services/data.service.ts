@@ -15,16 +15,14 @@ export class DataService {
   //Methods to get Sectors data
   
   //Get All Sectors
-  getAllSectors() {
-    return this.http.get<any>(`${this.url}/sectors`)
+  getAllSectors(sort: string) {
+    return this.http.get<any>(`${this.url}/sectors?sort=${sort}`)
   }
   
   //Get Sector by Id
   getSectorById(id: string) {
     return this.http.get<any>(`${this.url}/sectors/${id}`)    
   }
-
-
 
   //Methos to get Streets Data
 

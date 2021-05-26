@@ -16,7 +16,14 @@
         </button>
     </div>
 
-    <hr class="mb-3">
+    <hr >
+
+    <p class="text-end m-0">Ordenar por: 
+        <button (click)="sort()" class="btn btn-sm btn-acent mx-1 ">
+            <i *ngIf="!sortFrom" class="fas fa-sort-amount-down"></i>
+            <i *ngIf="sortFrom" class="fas fa-sort-amount-up-alt"></i>
+        </button>
+    </p>
 
     <div *ngIf="sectors.length === 0" class="animated fadeIn text-center mt-5">
        
@@ -34,9 +41,9 @@
         </h2>
     </div>
     
-    <div *ngIf="filteredSectors.length === 0" class="row">
+    <div *ngIf="filteredSectors.length === 0" class="row ">
             
-        <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3"
+        <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3 " style="display: flex"
             *ngFor="let sector of sectors" [sectorData]="sector" >
         </app-sector-card>
         

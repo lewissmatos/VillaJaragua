@@ -12,10 +12,9 @@ export class SectorsComponent implements OnInit {
 
   constructor(private data: DataService, private router: Router,private breakpointObserver: BreakpointObserver ) {
     //Calling method to Get all Sectors from Backend
-    this.getAllSectors()
+    this.getAllSectors('desc')
 
-    //Breakpoin to cheange search icon
-
+    //Breakpoint to cheange search icon
     this.breakpointObserver
       .observe(['(max-width: 600px)'])
       .subscribe((state: BreakpointState ) => {
@@ -24,7 +23,7 @@ export class SectorsComponent implements OnInit {
         } else {
           this.searchIcon = false
         }
-      });
+      })
   }
   searchIcon =  false
 
@@ -36,8 +35,8 @@ export class SectorsComponent implements OnInit {
   sectors: any = []
   
   //Method to get all sectors from Backend
-  getAllSectors() {
-    this.data.getAllSectors().subscribe(
+  getAllSectors(sort: string) {
+    this.data.getAllSectors(sort).subscribe(
       res => {
         this.sectors = res.data
 
@@ -62,6 +61,14 @@ export class SectorsComponent implements OnInit {
         return x.name.toLowerCase().includes(word.toLowerCase())
       }
     )
+  }
+
+  sortFrom = false
+  sort() {
+    this.sortFrom = !this.sortFrom
+    
+    !this.sortFrom ? this.getAllSectors('desc') : this.getAllSectors('asc')
+    
   }
 
 }
