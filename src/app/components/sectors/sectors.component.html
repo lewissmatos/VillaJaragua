@@ -1,4 +1,4 @@
-<div  class="container mt-3 animated fadeIn ">
+<div  class="container mt-3 animated fadeIn " style="margin-bottom: 40px;">
     
     <app-nav ></app-nav>
     
@@ -20,8 +20,8 @@
 
     <p class="text-end m-0">Ordenar por: 
         <button (click)="sort()" class="btn btn-sm btn-acent mx-1 ">
-            <i *ngIf="!sortFrom" class="fas fa-sort-amount-down"></i>
-            <i *ngIf="sortFrom" class="fas fa-sort-amount-up-alt"></i>
+            <i *ngIf="!sortFrom" class="fas fa-sort-amount-down bx-fade-down"></i>
+            <i *ngIf="sortFrom" class="fas fa-sort-amount-up-alt bx-fade-up"></i>
         </button>
     </p>
 
@@ -51,7 +51,7 @@
 
     <div *ngIf="filteredSectors.length > 0" class="row">
             
-        <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3"
+        <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3 " style="display: flex"
             *ngFor="let sector of filteredSectors" [sectorData]="sector" >
         </app-sector-card>
         
