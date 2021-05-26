@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,20 +6,40 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
 
   constructor(private router: Router) {
+    this.checkRoute()
   }
 
-  ngOnInit(): void {
+  showSectors = true
+
+  //Method to navigate on "sectors" or "streets"
+  navigate() {
+    let route = this.router.url
+    
+    if (route === '/sectors') {
+      this.router.navigate(['/streets'])
+      this.showSectors = true
+    }
+    
+    if (route === '/streets') {
+      this.router.navigate(['/sectors'])
+      this.showSectors = false
+    }
+    
   }
 
-  navigateToSectors() {
-    this.router.navigate(['/sectors'])
-  }
+  checkRoute() {
+    let route = this.router.url
 
-  navigateToStreets() {
-    this.router.navigate(['/streets'])
+    if (route === '/sectors') {
+      this.showSectors = true
+    }
+    
+    if (route === '/streets') {
+      this.showSectors = false
+    }
   }
 
 }

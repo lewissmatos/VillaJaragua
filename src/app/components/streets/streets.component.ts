@@ -36,7 +36,6 @@ export class StreetsComponent implements OnInit {
     this.data.getAllStreets().subscribe(
       res => {
         this.streets = res.data
-        console.log(res.data)
         setTimeout(() => {
           this.noInternet = true
         }, 5000)
