@@ -33,13 +33,19 @@
         </h2>
     </div>
 
-    <div *ngIf="streetsFiltered.length === 0" class="row animated fadeIn">    
+    
+    <div *ngIf="streetsFiltered.length === 0 && word.value !== '' " class="alert alert-danger mt-3 animated fadeIn">
+        Ninguna calle coincide con su termino de busqueda.
+        <strong class="mx-1" style="cursor: pointer;" (click)="word.value = ''" >Volver</strong>
+    </div>
+
+    <div *ngIf="streetsFiltered.length === 0 && word.value === '' " class="row animated fadeIn">    
         <app-street-card class="col-lg-3 col-md-4 col-sm-6 col-12"
          *ngFor="let street of streets" [streetData]="street"
         ></app-street-card>
     </div>
 
-    <div *ngIf="streetsFiltered.length > 0" class="row animated fadeIn">    
+    <div class="row animated fadeIn">    
         <app-street-card class="col-lg-3 col-md-4 col-sm-6 col-12"
          *ngFor="let street of streetsFiltered" [streetData]="street"
         ></app-street-card>

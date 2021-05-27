@@ -41,7 +41,11 @@
         </h2>
     </div>
     
-    <div *ngIf="filteredSectors.length === 0" class="row ">
+    <div *ngIf="filteredSectors.length === 0 && word.value !== '' " class="alert alert-danger mt-3 animated fadeIn">
+        Ningún sector coincide con su termino de busqueda
+        <strong class="mx-1" style="cursor: pointer;" (click)="word.value = ''" >Volver</strong>
+    </div>
+    <div *ngIf="filteredSectors.length === 0 && word.value === '' " class="row ">
             
         <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3 " style="display: flex"
             *ngFor="let sector of sectors" [sectorData]="sector" >
@@ -49,7 +53,7 @@
         
     </div>
 
-    <div *ngIf="filteredSectors.length > 0" class="row">
+    <div class="row">
             
         <app-sector-card class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3 " style="display: flex"
             *ngFor="let sector of filteredSectors" [sectorData]="sector" >
