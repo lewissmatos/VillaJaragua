@@ -7,3 +7,17 @@
 .card-img{
     border-radius: 12px !important;
 }
+a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.15s linear;
+}
+
+$acent: #0d755b;
+
+a:hover{
+    color: $acent;
+    cursor: pointer;
+}
+

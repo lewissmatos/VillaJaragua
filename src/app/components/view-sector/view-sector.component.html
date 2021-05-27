@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-8 col-12 mb-2">
-            <div class="img-card">
+            <div class="img-card animated fadeIn ">
                 <img class="card-img img-fluid" [src]="sector.photo" alt="Imagen representativa del sector {{sector.name}}">
             </div>
 
@@ -13,10 +13,14 @@
             </h5>  
 
             <h5 class="mt-3">
-                Coordenadas: 
-                <strong>
+                Coord. 
+                <a target="_blank" href="https://www.google.com.do/maps/place/{{sector.coordinates?.latitude}}, {{sector.coordinates?.longitude}}">
                     {{sector.coordinates?.latitude + ', ' + sector.coordinates?.longitude}}
-                </strong>
+                    <i class="fas fa-link text-acent mx-1"></i>
+                </a>
+                <!-- <a target="_blank" href="https://www.google.com/search?q={{sector.coordinates?.latitude}}%2C+{{sector.coordinates?.longitude}}&oq={{sector.coordinates?.latitude}}%2C+{{sector.coordinates?.longitude}}&aqs=chrome.0.69i59j69i60.1091j0j1&sourceid=chrome&ie=UTF-8">
+                    {{sector.coordinates?.latitude + ', ' + sector.coordinates?.longitude}}
+                </a> -->
             </h5>
 
         </div>
